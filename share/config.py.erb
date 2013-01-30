@@ -1,0 +1,20 @@
+worlds['world'] = <%= @world.inspect %>
+
+renders['render'] = {
+    'world': 'world',
+    'title': '',
+    'forcerender': True,
+    'dimension': <%= dimension.inspect %>,
+    'rendermode': <%= mode.inspect %>,
+    'northdirection': <%= north.inspect %>,
+    'imgformat': <%= format.inspect %>,
+    'imgquality': <%= quality.inspect %>,
+    <% if crop %>
+        'crop': (<%= crop.map {|x| x.to_s }.join(',') %>),
+    <% end %>
+    <% if texture_path %>
+        'texturepath': <%= texture_path.inspect %>,
+    <% end %>
+}
+
+outputdir = <%= @output.inspect %>
